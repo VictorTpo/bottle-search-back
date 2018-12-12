@@ -1,0 +1,12 @@
+Metrics/LineLength:
+  Enabled: false
+Metrics/ClassLength:
+  Enabled: false
+Documentation:
+  Enabled: false
+AllCops:
+  Exclude:
+    - 'app/view/**/*'
+    - 'db/schema.rb'
+    - 'spec/rails_helper.rb'
+  TargetRubyVersion: 2.5.1
