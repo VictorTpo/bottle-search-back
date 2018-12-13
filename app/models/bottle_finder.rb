@@ -3,14 +3,14 @@ class BottleFinder
 
   def initialize(params)
     @params = params
-    @results = []
   end
 
   def call
-    @search           = Bottle.where(sql_query_search).where(hash_search)
-    @total            = @search.count
-    @remaining_count  = @search.remaining.count
-    @bottles_count    = @search.remaining.sum(&:stored)
+    @results          = Bottle.where(sql_query_search).where(hash_search)
+    @total            = @results.count
+    @remaining_count  = @results.remaining.count
+    @bottles_count    = @results.remaining.sum(&:stored)
+    self
   end
 
   private
