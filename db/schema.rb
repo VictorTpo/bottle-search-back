@@ -15,13 +15,13 @@ ActiveRecord::Schema.define(version: 2018_12_12_150546) do
   create_table "bottles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", limit: 191, null: false
     t.integer "vintage", null: false
-    t.integer "box_id", null: false
-    t.boolean "full", default: true, null: false
+    t.integer "purchased", null: false
+    t.integer "stored", null: false
     t.string "color", limit: 191
     t.string "family", limit: 191
-    t.boolean "sparkling", default: false
+    t.boolean "sparkling", default: false, null: false
     t.text "grapes"
-    t.integer "purchase_date"
+    t.date "purchase_date"
     t.string "purchase_occasion", limit: 191
     t.string "offerer", limit: 191
     t.text "description"

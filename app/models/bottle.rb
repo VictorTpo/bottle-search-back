@@ -1,15 +1,14 @@
 class Bottle < ActiveRecord::Base
-  validates :name,    presence: true
-  validates :vintage, presence: true
-  validates :box_id,  presence: true
+  validates :name,      presence: true
+  validates :vintage,   presence: true
   validates :color, inclusion: { in: %w(red white pink), allow_blank: true }
 
-  def self.next_box_id
-    (Bottle.pluck(:box_id).max || 0) + 1
-  end
+  before_save :set_purchased_and_store
 
-  def save
-    self.box_id = Bottle.next_box_id unless box_id.present?
-    super
+  scope :remaining, -> { where('stored > 0') }
+
+  def set_purchased_and_store
+    self.purchased  = 1 if purchased.nil?
+    self.stored     = purchased if stored.nil?
   end
 end

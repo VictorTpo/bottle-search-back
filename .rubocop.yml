@@ -4,6 +4,8 @@ Metrics/ClassLength:
   Enabled: false
 Documentation:
   Enabled: false
+Layout/SpaceBeforeFirstArg:
+  Enabled: false
 AllCops:
   Exclude:
     - 'app/view/**/*'

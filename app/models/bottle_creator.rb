@@ -1,18 +1,18 @@
 class BottleCreator
   def initialize(params)
     @params = params
-    @number = @params.delete(:number) || 1
-    @box_id = Bottle.next_box_id
+    @number = @params[:purchased] || 1
   end
 
   def save
     bottle = Bottle.new(
-      box_id:     @box_id,
       name:       @params[:name],
       vintage:    @params[:vintage],
+      purchased:  @number,
+      stored:     @number,
       color:      @params[:color],
       family:     @params[:family],
-      sparkling:  @params[:sparkling],
+      sparkling:  @params[:sparkling] || false,
       grapes:     @params[:grapes],
       purchase_date:      @params[:purchase_date],
       purchase_occasion:  @params[:purchase_occasion],

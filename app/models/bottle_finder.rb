@@ -1,5 +1,5 @@
 class BottleFinder
-  attr_reader :results
+  attr_reader :results, :total, :remaining_count, :bottles_count
 
   def initialize(params)
     @params = params
@@ -7,16 +7,10 @@ class BottleFinder
   end
 
   def call
-    @search = Bottle.where(sql_query_search).where(hash_search)
-    @results = @search.index_by(&:box_id)
-  end
-
-  def total
-    @results.size
-  end
-
-  def bottles_number
-    @search.count
+    @search           = Bottle.where(sql_query_search).where(hash_search)
+    @total            = @search.count
+    @remaining_count  = @search.remaining.count
+    @bottles_count    = @search.remaining.sum(&:stored)
   end
 
   private

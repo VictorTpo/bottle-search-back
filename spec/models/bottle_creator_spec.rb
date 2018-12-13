@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe BottleCreator, type: :model do
   context '#save' do
     it 'can create bottles with good params' do
-      params  = { name: 'Chateau Totor', vintage: 1989, number: 3, color: 'red' }
+      params  = { name: 'Chateau Totor', vintage: 1989, purchased: 3, color: 'red' }
       creator = BottleCreator.new(params)
       expect(creator.save).to be(true)
       expect(Bottle.count).to eq(3)
