@@ -13,8 +13,8 @@ RSpec.describe 'Bottle endpoint', type: :request do
     end
   end
 
-  # GET /bottles
-  describe '#index' do
+  # POST /bottles/search
+  describe '#search' do
     before do
       Bottle.create(name: 'Chateau Totor',  vintage: 1989, purchased: 3, color: 'red', offerer: 'Patrice', purchase_occasion: 'For my birthday')
       Bottle.create(name: 'Chateau Margot', vintage: 1991, purchased: 2, stored: 0, color: 'white')
@@ -24,7 +24,7 @@ RSpec.describe 'Bottle endpoint', type: :request do
     end
 
     it 'returns correct results' do
-      get '/bottles'
+      post '/bottles/search'
       expect(response).to be_successful
       expect(json_body['search']['total']).to be_present
       expect(json_body['search']['remaining_count']).to be_present

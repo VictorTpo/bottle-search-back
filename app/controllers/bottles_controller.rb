@@ -1,5 +1,5 @@
 class BottlesController < ApplicationController
-  def index
+  def search
     @search = BottleFinder.new(params).call
   end
 
