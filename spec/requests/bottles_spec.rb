@@ -33,6 +33,7 @@ RSpec.describe 'Bottle endpoint', type: :request do
     end
   end
 
+  # POST /bottles
   describe '#create' do
     it 'do nothing if wrong params' do
       post '/bottles'
