@@ -10,6 +10,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
     origins 'localhost:3001'
     resource '*',
              headers: :any,
-             methods: %w(get post put patch delete options head)
+             methods: %w(get post put patch delete options head),
+             expose: ['Authorization']
   end
 end
