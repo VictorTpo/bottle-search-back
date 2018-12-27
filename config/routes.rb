@@ -15,5 +15,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: %w(create)
+  resources :users, only: %w(create) do
+    collection do
+      get :me
+    end
+  end
 end
