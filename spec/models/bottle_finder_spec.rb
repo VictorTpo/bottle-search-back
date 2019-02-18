@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe BottleFinder, type: :model do
-  context '#call' do
+  describe '#call' do
     before do
       Bottle.create(name: 'Chateau Totor',  vintage: 1989, purchased: 3, color: 'red', offerer: 'Patrice', purchase_occasion: 'For my birthday')
       Bottle.create(name: 'Chateau Margot', vintage: 1991, purchased: 2, stored: 0, color: 'white')

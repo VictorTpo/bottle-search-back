@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe BottleCreator, type: :model do
-  context '#save' do
+  describe '#save' do
     it 'can create bottles with good params' do
       params  = { name: 'Chateau Totor', vintage: 1989, purchased: 3, color: 'red' }
       creator = BottleCreator.new(params)
