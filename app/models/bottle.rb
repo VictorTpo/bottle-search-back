@@ -5,7 +5,7 @@ class Bottle < ActiveRecord::Base
 
   before_save :set_purchased_and_store
 
-  scope :remaining, -> { where('stored > 0') }
+  scope :remaining, -> { where('bottles.stored > 0') }
 
   def set_purchased_and_store
     self.purchased  = 1 if purchased.nil?

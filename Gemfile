@@ -23,7 +23,7 @@ group :development do
 end
 
 group :test do
+  gem 'database_cleaner',   '~> 1.7.0'
   gem 'factory_bot_rails',  '~> 4.11.1'
   gem 'faker',              '~> 1.9.1'
-  gem 'database_cleaner',   '~> 1.7.0'
 end

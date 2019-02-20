@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_12_27_141844) do
 
-  create_table "bottles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "bottles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", limit: 191, null: false
     t.integer "vintage", null: false
     t.integer "purchased", null: false
@@ -30,13 +30,13 @@ ActiveRecord::Schema.define(version: 2018_12_27_141844) do
     t.index ["name"], name: "index_bottles_on_name"
   end
 
-  create_table "jwt_blacklist", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "jwt_blacklist", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "jti", limit: 191, null: false
     t.datetime "exp", null: false
     t.index ["jti"], name: "index_jwt_blacklist_on_jti"
   end
 
-  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "full_name", null: false
     t.date "birthday"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2018_12_27_141844) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", limit: 191, default: "", null: false
     t.string "encrypted_password", limit: 191, default: "", null: false
     t.string "reset_password_token", limit: 191
