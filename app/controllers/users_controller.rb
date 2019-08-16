@@ -7,6 +7,7 @@ class UsersController < ApplicationController
       email:    params['email'],
       password: params['password']
     )
+
     @profile = Profile.new(
       user:       @user,
       full_name:  params['full_name'],

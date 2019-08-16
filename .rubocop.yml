@@ -1,14 +1,22 @@
-Metrics/LineLength:
-  Enabled: false
-Metrics/ClassLength:
-  Enabled: false
+AllCops:
+  Exclude:
+    - "app/view/**/*"
+    - "db/schema.rb"
+    - "spec/rails_helper.rb"
+  TargetRubyVersion: 2.5.1
+
 Documentation:
+  Enabled: false
+Layout::AlignHash:
   Enabled: false
 Layout/SpaceBeforeFirstArg:
   Enabled: false
-AllCops:
-  Exclude:
-    - 'app/view/**/*'
-    - 'db/schema.rb'
-    - 'spec/rails_helper.rb'
-  TargetRubyVersion: 2.5.1
+Metrics/ClassLength:
+  Enabled: false
+Metrics/LineLength:
+  Enabled: false
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    "%i": ()
+    "%w": ()
+    "%W": ()

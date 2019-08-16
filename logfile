@@ -1,0 +1,14 @@
+2019-08-16 15:30:46.847 CEST [42329] LOG:  listening on IPv6 address "::1", port 5432
+2019-08-16 15:30:46.847 CEST [42329] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-08-16 15:30:46.847 CEST [42329] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2019-08-16 15:30:46.858 CEST [42330] LOG:  database system was shut down at 2019-08-16 15:30:40 CEST
+2019-08-16 15:30:46.861 CEST [42329] LOG:  database system is ready to accept connections
+2019-08-16 15:30:55.330 CEST [42368] FATAL:  role "root" does not exist
+2019-08-16 15:32:07.876 CEST [42450] FATAL:  role "postgres" does not exist
+2019-08-16 15:32:13.406 CEST [42487] FATAL:  role "postgres" does not exist
+2019-08-16 15:32:51.233 CEST [42539] FATAL:  database "victor" does not exist
+2019-08-16 15:33:39.974 CEST [42329] LOG:  received fast shutdown request
+2019-08-16 15:33:39.974 CEST [42329] LOG:  aborting any active transactions
+2019-08-16 15:33:39.975 CEST [42329] LOG:  background worker "logical replication launcher" (PID 42336) exited with exit code 1
+2019-08-16 15:33:39.975 CEST [42331] LOG:  shutting down
+2019-08-16 15:33:39.979 CEST [42329] LOG:  database system is shut down

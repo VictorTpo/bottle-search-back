@@ -1,5 +1,5 @@
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
   encoding: utf8
@@ -7,13 +7,13 @@ default: &default
 development:
   <<: *default
   database: bottle-search_dev
-  username: root
+  username: postgres
   password:
 
 test:
   <<: *default
   database: bottle-search_test
-  username: root
+  username: postgres
   password:
 
 production:

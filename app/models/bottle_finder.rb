@@ -16,13 +16,15 @@ class BottleFinder
   private
 
   def sql_query_search
-    return unless @params[:text].present?
+    return if @params[:text].blank?
+
     text_fields = %w(description grapes offerer purchase_occasion recipes_sample
                      taste_description name)
     q = []
     text_fields.each do |field|
-      q << "#{field} LIKE '%#{@params[:text]}%'"
+      q << "#{field} ILIKE '%#{@params[:text]}%'"
     end
+
     q.join(' OR ')
   end
 
